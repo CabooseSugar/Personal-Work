@@ -1,0 +1,25 @@
+HTML
+- not a programming language
+- stands foro HypterText Markup Language
+- HTML5
+- tag based language
+- HTML Headings
+	<h1>
+	<h2>
+	...
+	<h6>
+
+		<html>
+		/   \
+	     <head>  <body>
+
+Block Level vs Inline Level
+- block level elements are seperated by new lines
+- inline elements are rendered on the same line
+
+Block Level
+- h1, h2, h3 ... h6
+- <div>, <header>, <footer>, <article>
+
+Inline
+- <button>, <a>, <span>, <input>, <select>, <label>
