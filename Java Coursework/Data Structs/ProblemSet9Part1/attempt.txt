@@ -1,0 +1,97 @@
+import java.lang.reflect.Array;
+import java.util.*;
+
+public class BottomUpConstantSpace {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int numDenoms = sc.nextInt();
+        Long denoms[] = new Long[numDenoms];
+        for (int i = 0; i < numDenoms; i++) {
+            denoms[i] = sc.nextLong();
+        }
+        Arrays.sort(denoms, Collections.reverseOrder());
+
+        int n = sc.nextInt();
+        while (n > 0) {
+            if (numDenoms == 1) {
+                System.out.println(1);
+                n--;
+                continue;
+            }
+            long amt = sc.nextLong();
+            long ways = output(denoms, amt);
+            n--;
+            System.out.println(ways);
+        }
+    }
+
+    static long output(Long[] d, long amt) {
+        Long[] dCounter = new Long[d.length - 1]; // leaving out 1's index - remember to +1 later to array indexing
+        // TESTING
+        for (int i = 0; i < dCounter.length; i++){
+            dCounter[i] = 0L;
+        }
+        //
+
+        long ways = 1; // all 1's case
+        int start = 0;
+
+        // TESTING
+        //List<Long[]> test = new ArrayList<>();
+        //
+
+        while(start < dCounter.length) {
+            for (int i = start; i < dCounter.length; i++) {
+                long total = 0;
+                while (total <= amt) {
+                    dCounter[i]++;
+                    total = totaller(d, dCounter);
+                    ways++; // any total below amt can be gotten to by adding 1's
+
+                    //TESTING
+                    /*
+                    Long[] temp = new Long[dCounter.length];
+                    for (int j = 0; j < dCounter.length; j++)
+                        temp[j] = dCounter[j];
+                    test.add(temp);
+                    */
+                    //
+
+                    if (total == amt){ // save some time
+                        ways++; // buffer from ways-- below
+                        break;
+                    }
+                }
+                ways--; // account for extra since must've gone overboard
+                dCounter[i]--; // decrement back into usable range
+            }
+
+            boolean allZeroes = true;
+            for (int i = 0; i < dCounter.length; i++){
+                if (dCounter[i] == 0){
+                    continue;
+                }
+                allZeroes = false;
+                dCounter[i]--;
+                start = i + 1;
+                for (int j = i + 1; j < dCounter.length; j++ ){
+                    dCounter[j] = 0L;
+                }
+                break;
+            }
+            if (allZeroes){
+                start++;
+            }
+        }
+
+        return ways;
+    }
+
+    static long totaller(Long[] d, Long[] dCounter) {
+        long total = 0;
+        for (int i = 0; i < dCounter.length; i++){
+            total += d[i] * dCounter[i];
+        }
+        return total;
+    }
+}
