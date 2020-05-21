@@ -1,0 +1,6 @@
+﻿  String2.cpp
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week7homework\week7homework\string2.cpp(92): warning C4018: '<': signed/unsigned mismatch
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week7homework\week7homework\string2.cpp(150): warning C4018: '<': signed/unsigned mismatch
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week7homework\week7homework\string2.cpp(172): warning C4018: '<': signed/unsigned mismatch
+  Week7Homework.vcxproj -> C:\Users\Larry\Desktop\College\2017-2018\Spring\CMPSC122\Week7Homework\Debug\Week7Homework.exe
+  Week7Homework.vcxproj -> C:\Users\Larry\Desktop\College\2017-2018\Spring\CMPSC122\Week7Homework\Debug\Week7Homework.pdb (Full PDB)
