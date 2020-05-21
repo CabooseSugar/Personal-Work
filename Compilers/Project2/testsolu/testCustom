@@ -1,0 +1,4 @@
+a = 1234;
+b = 12; // test hello
+c = 5; /* testing
+weee */ b = 12.0;
