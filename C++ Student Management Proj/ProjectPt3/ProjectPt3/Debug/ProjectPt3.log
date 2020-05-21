@@ -1,0 +1,4 @@
+﻿  Task.cpp
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\projectpt3\projectpt3\task.cpp(11): warning C4018: '>': signed/unsigned mismatch
+  ProjectPt3.vcxproj -> C:\Users\Larry\Desktop\College\2017-2018\Spring\CMPSC122\ProjectPt3\Debug\ProjectPt3.exe
+  ProjectPt3.vcxproj -> C:\Users\Larry\Desktop\College\2017-2018\Spring\CMPSC122\ProjectPt3\Debug\ProjectPt3.pdb (Full PDB)

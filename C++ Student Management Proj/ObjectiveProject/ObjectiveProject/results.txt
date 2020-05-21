@@ -1,0 +1,75 @@
+	OBJECTIVE 1
+ Objective Name: 
+Spring Cleaning
+ The Description of the Objective is: 
+focus on living room
+ The Category of the Objective is: 
+4
+ The Priority of the Objective is: 
+1
+ The Time To Finish is: 
+10
+ The Status of the Objective is (F for Finished, P for In Progress): 
+P
+ The Resources of the Objective are... 
+ Resource 1: 
+dust rag
+ Resource 2: 
+vacuum
+ Resource 3: 
+mop
+ The StartDate of the Objective is: 
+3 15 2019
+ The DueDate of the Objective is: 
+1 15 2018
+
+	OBJECTIVE 2
+ Objective Name: 
+Walk dogs
+ The Description of the Objective is: 
+nighttime walk
+ The Category of the Objective is: 
+1
+ The Priority of the Objective is: 
+5
+ The Time To Finish is: 
+1
+ The Status of the Objective is (F for Finished, P for In Progress): 
+F
+ The Resources of the Objective are... 
+ Resource 1: 
+collar
+ Resource 2: 
+leash
+ Resource 3: 
+ball
+ The StartDate of the Objective is: 
+2 30 2018
+ The DueDate of the Objective is: 
+1 15 2018
+
+	OBJECTIVE 3
+ Objective Name: 
+Paint
+ The Description of the Objective is: 
+Paint a Painting
+ The Category of the Objective is: 
+2
+ The Priority of the Objective is: 
+3
+ The Time To Finish is: 
+5
+ The Status of the Objective is (F for Finished, P for In Progress): 
+F
+ The Resources of the Objective are... 
+ Resource 1: 
+Paints
+ Resource 2: 
+Brushes
+ Resource 3: 
+Glue
+ The StartDate of the Objective is: 
+1 13 2018
+ The DueDate of the Objective is: 
+1 15 2018
+
