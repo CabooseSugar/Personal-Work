@@ -1,0 +1,6 @@
+﻿  circleDemo.cpp
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\1_16_18\1_16_18\circledemo.cpp(11): warning C4930: 'Circle getXCent(void)': prototyped function not called (was a variable definition intended?)
+  Circle.cpp
+  Generating Code...
+  1_16_18.vcxproj -> C:\Users\Larry\Desktop\College\2017-2018\Spring\CMPSC122\1_16_18\Debug\1_16_18.exe
+  1_16_18.vcxproj -> C:\Users\Larry\Desktop\College\2017-2018\Spring\CMPSC122\1_16_18\Debug\1_16_18.pdb (Full PDB)
