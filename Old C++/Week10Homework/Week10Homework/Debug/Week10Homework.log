@@ -1,0 +1,7 @@
+﻿  Wolf_7_9.cpp
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week10homework\week10homework\wolf_7_9.cpp(9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week10homework\week10homework\wolf_7_9.cpp(10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week10homework\week10homework\wolf_7_9.cpp(65): warning C4551: function call missing argument list
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week10homework\week10homework\wolf_7_9.cpp(74): warning C4551: function call missing argument list
+  Week10Homework.vcxproj -> C:\Users\Larry\Desktop\College\2017-2018\Spring\CMPSC122\Week10Homework\Debug\Week10Homework.exe
+  Week10Homework.vcxproj -> C:\Users\Larry\Desktop\College\2017-2018\Spring\CMPSC122\Week10Homework\Debug\Week10Homework.pdb (Full PDB)

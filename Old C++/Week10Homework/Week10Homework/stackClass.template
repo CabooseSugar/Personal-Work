@@ -1,0 +1,38 @@
+/**************************************************************************************
+* file name: stackClass.template
+* programmer name: Kyle Wolf
+* date created: 4/6/18
+* date of last revision:
+* details of the revision:
+* short description: Define the functions of the stackClass class
+***************************************************************************************/
+#include <cassert>  // Provides assert
+#include <cstdlib>  // Provides size_t
+#include "stackClass.h"
+
+template <class Item>
+void Stack<Item>::push(const Item& entry)
+// Library facilities used: cassert
+{
+    assert(size( ) < CAPACITY);
+    data[used] = entry;
+    used++;
+}
+
+template <class Item>
+Item Stack<Item>::pop( )
+// Library facilities used: cassert
+{
+    assert(!is_empty( ));
+    used--;
+    return data[used];
+}
+
+template <class Item>
+Item Stack<Item>::peek( ) const
+// Library facilities used: cassert
+{
+    assert(!is_empty( ));
+    return data[used-1];
+}
+

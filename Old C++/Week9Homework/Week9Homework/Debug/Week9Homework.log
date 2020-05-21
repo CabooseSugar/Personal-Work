@@ -1,0 +1,49 @@
+﻿  polytest1.cxx
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(81): warning C4018: '<': signed/unsigned mismatch
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(77): note: while compiling class template member function 'main_savitch_4::polynomial<double> &main_savitch_4::polynomial<double>::operator =(const main_savitch_4::polynomial<double> &)'
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\polytest1.cxx(66): note: see reference to function template instantiation 'main_savitch_4::polynomial<double> &main_savitch_4::polynomial<double>::operator =(const main_savitch_4::polynomial<double> &)' being compiled
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\polytest1.cxx(16): note: see reference to class template instantiation 'main_savitch_4::polynomial<double>' being compiled
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(92): warning C4018: '<': signed/unsigned mismatch
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(88): note: while compiling class template member function 'main_savitch_4::polynomial<double> &main_savitch_4::polynomial<double>::operator -=(const main_savitch_4::polynomial<double> &)'
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\polytest1.cxx(115): note: see reference to function template instantiation 'main_savitch_4::polynomial<double> &main_savitch_4::polynomial<double>::operator -=(const main_savitch_4::polynomial<double> &)' being compiled
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(94): warning C4018: '<': signed/unsigned mismatch
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(99): warning C4018: '<': signed/unsigned mismatch
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(111): warning C4018: '<': signed/unsigned mismatch
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(107): note: while compiling class template member function 'main_savitch_4::polynomial<double> &main_savitch_4::polynomial<double>::operator +=(const main_savitch_4::polynomial<double> &)'
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\polytest1.cxx(101): note: see reference to function template instantiation 'main_savitch_4::polynomial<double> &main_savitch_4::polynomial<double>::operator +=(const main_savitch_4::polynomial<double> &)' being compiled
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(113): warning C4018: '<': signed/unsigned mismatch
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(118): warning C4018: '<': signed/unsigned mismatch
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(132): warning C4018: '<': signed/unsigned mismatch
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(128): note: while compiling class template member function 'main_savitch_4::polynomial<double> &main_savitch_4::polynomial<double>::operator *=(const main_savitch_4::polynomial<double> &)'
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\polytest1.cxx(81): note: see reference to function template instantiation 'main_savitch_4::polynomial<double> &main_savitch_4::polynomial<double>::operator *=(const main_savitch_4::polynomial<double> &)' being compiled
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(134): warning C4018: '<': signed/unsigned mismatch
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(139): warning C4018: '<': signed/unsigned mismatch
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(183): warning C4018: '<': signed/unsigned mismatch
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(178): note: while compiling class template member function 'double main_savitch_4::polynomial<double>::eval(CoefType) const'
+          with
+          [
+              CoefType=double
+          ]
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\polytest1.cxx(60): note: see reference to function template instantiation 'double main_savitch_4::polynomial<double>::eval(CoefType) const' being compiled
+          with
+          [
+              CoefType=double
+          ]
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(66): warning C4018: '<': signed/unsigned mismatch
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(62): note: while compiling class template member function 'void main_savitch_4::polynomial<double>::reserve(std::size_t)'
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(47): note: see reference to function template instantiation 'void main_savitch_4::polynomial<double>::reserve(std::size_t)' being compiled
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(9): note: while compiling class template member function 'main_savitch_4::polynomial<double>::polynomial(void)'
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\polytest1.cxx(16): note: see reference to function template instantiation 'main_savitch_4::polynomial<double>::polynomial(void)' being compiled
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(148): warning C4018: '<': signed/unsigned mismatch
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(147): note: while compiling class template member function 'main_savitch_4::polynomial<double> &main_savitch_4::polynomial<double>::operator *=(CoefType)'
+          with
+          [
+              CoefType=double
+          ]
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week9homework\week9homework\poly1.template(195): note: see reference to function template instantiation 'main_savitch_4::polynomial<double> &main_savitch_4::polynomial<double>::operator *=(CoefType)' being compiled
+          with
+          [
+              CoefType=double
+          ]
+  Week9Homework.vcxproj -> C:\Users\Larry\Desktop\College\2017-2018\Spring\CMPSC122\Week9Homework\Debug\Week9Homework.exe
+  Week9Homework.vcxproj -> C:\Users\Larry\Desktop\College\2017-2018\Spring\CMPSC122\Week9Homework\Debug\Week9Homework.pdb (Full PDB)

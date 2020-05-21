@@ -1,0 +1,7 @@
+﻿  Wolf_6_1.cpp
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week8homework\week8homework\list.template(124): warning C4018: '<': signed/unsigned mismatch
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week8homework\week8homework\list.template(121): note: while compiling class template member function 'void List<int>::listDisplay(List<int>::Node *)'
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week8homework\week8homework\wolf_6_1.cpp(35): note: see reference to function template instantiation 'void List<int>::listDisplay(List<int>::Node *)' being compiled
+  c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week8homework\week8homework\wolf_6_1.cpp(20): note: see reference to class template instantiation 'List<int>' being compiled
+  Week8Homework.vcxproj -> C:\Users\Larry\Desktop\College\2017-2018\Spring\CMPSC122\Week8Homework\Debug\Week8Homework.exe
+  Week8Homework.vcxproj -> C:\Users\Larry\Desktop\College\2017-2018\Spring\CMPSC122\Week8Homework\Debug\Week8Homework.pdb (Full PDB)

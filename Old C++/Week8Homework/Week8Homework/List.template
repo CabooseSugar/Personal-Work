@@ -1,0 +1,138 @@
+/**************************************************************************************
+* file name: Wolf_6_1
+* programmer name: Kyle Wolf
+* date created: 4/29/18
+* date of last revision:
+* details of the revision: 
+* short description: Define the functions of the template class List
+***************************************************************************************/
+
+#include <cstdlib>
+#include <cassert>
+#include <iostream>
+
+using namespace std;
+
+template <class Item>
+void List<Item>::list_head_insert(Node*& head_ptr, const Item& entry)
+{	
+	Node* newHead = new Node;
+	newHead->data = entry;
+
+	if (head_ptr == NULL)
+	{
+		newHead->link = NULL;
+		head_ptr = newHead;
+		return;
+	}
+
+	newHead->link = head_ptr;
+	head_ptr = newHead;
+}
+
+template <class Item>
+void List<Item>::list_tail_insert(Node*& head_ptr, const Item& entry)
+{
+	Node *cursor = head_ptr, *tail = new Node;
+
+	if (head_ptr == NULL)
+	{
+		list_head_insert(head_ptr, entry);
+		return;
+	}
+	
+	tail->data = entry;
+	tail->link = NULL;
+	
+	while (cursor->link != NULL)
+		cursor = cursor->link;
+
+	cursor->link = tail;
+}
+
+template <class Item>
+void List<Item>::list_head_remove(Node*& head_ptr)
+{
+	Node *remove_ptr;
+
+	remove_ptr = head_ptr;
+	head_ptr = head_ptr->link;
+	delete remove_ptr;
+}
+
+template <class Item>
+void List<Item>::list_remove(Node*& head_ptr, Node* target_ptr)
+{
+	Node* cursor = head_ptr, *remove_ptr;
+
+	if (head_ptr == target_ptr)
+	{
+		list_head_remove(head_ptr);
+		return;
+	}
+
+	while (cursor->link != target_ptr)	
+		cursor = cursor->link;
+	
+	remove_ptr = cursor->link;
+	cursor->link = remove_ptr->link;
+
+	delete remove_ptr;
+}
+
+template <class Item>
+void List<Item>::list_clear(Node*& head_ptr)
+{
+	while (head_ptr != NULL)
+		list_head_remove(head_ptr);
+}
+
+template <class Item>
+void List<Item>::sort_list(Node*& head_ptr)
+{
+	Node *lowest, *cursor, *newHead = NULL;
+
+	if (head_ptr == NULL)
+		return;
+
+	while (head_ptr != NULL)
+	{
+		cursor = head_ptr->link;
+		lowest = head_ptr;
+
+		for (cursor; cursor != NULL; cursor = cursor->link)
+		{
+			if (lowest->data > cursor->data)
+				lowest = cursor;
+		}
+		list_tail_insert(newHead, lowest->data);
+		list_remove(head_ptr, lowest);
+		
+	}
+
+	head_ptr = newHead;
+}
+
+template <class Item>
+size_t List<Item>::list_length(Node* head_ptr) {
+	size_t answer = 0;
+
+	Node* cursor = head_ptr;
+
+	for (cursor = head_ptr; cursor != NULL; cursor = cursor->link)
+		answer++;
+
+	return answer;
+}
+
+template <class Item>
+void List<Item>::listDisplay(Node* head_ptr) 
+{
+	Node* cursor = head_ptr;
+
+	for (int i = 0; i < list_length(head_ptr); i++)
+	{
+		cout << "Item " << i + 1 << ": " << cursor->data << endl;
+		cursor = cursor->link;
+	}
+}

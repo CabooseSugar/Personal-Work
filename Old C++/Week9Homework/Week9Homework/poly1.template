@@ -1,0 +1,208 @@
+/**************************************************************************************
+* file name: poly1.template
+* programmer name: Kyle Wolf
+* date created: 3/29/2018
+* date of last revision: 4/6/2018
+* details of the revision: edited multiple function definitions including the various operators
+* short description: Define the functions of the polynomial class template
+***************************************************************************************/
+
+#include "poly1.h"
+#include <cmath>
+using namespace std;	
+
+namespace main_savitch_4
+{
+	template <class CoefType>
+	polynomial<CoefType>::polynomial()
+	{
+		current_array_size = 1;
+		coef = new CoefType[current_array_size];
+		coef[0] = 0;
+	}
+
+	template <class CoefType>
+	polynomial<CoefType>::polynomial(CoefType c, unsigned int exponent = 0)
+	{
+		coef = new CoefType[exponent + 1];
+		coef[exponent] = c;
+	}
+
+	template <class CoefType>
+	polynomial<CoefType>::polynomial(const polynomial<CoefType>& source)
+	{
+		coef = new CoefType[source.current_array_size];
+        current_array_size = source.current_array_size;
+        copy(source.coef, source.coef + current_array_size, coef); 
+	}
+
+	template <class CoefType>
+	polynomial<CoefType>::~polynomial()
+	{
+		delete[] coef;
+	}
+
+	// MODIFICATION MEMBER FUNCTIONS
+	template <class CoefType>
+	void polynomial<CoefType>::add_to_coef(CoefType amount, unsigned int exponent)
+	{
+		coef[exponent] += amount;
+	}
+
+	template <class CoefType>
+	void polynomial<CoefType>::assign_coef(CoefType coeffeicient, unsigned int exponent)
+	{
+		if (exponent + 1 > current_array_size)
+			reserve(exponent);
+		coef[exponent] = coeffeicient;
+	}
+
+	template <class CoefType>
+	void polynomial<CoefType>::clear()
+	{
+		delete coef;
+		current_array_size = 1;
+		coef = new CoefType[current_array_size];
+		coef[0] = 0;
+	}
+
+	template <class CoefType>
+	void polynomial<CoefType>::reserve(size_t number)
+	{
+		CoefType* largerArray;
+
+		largerArray = new CoefType[number + 1];
+		for (int i = 0; i < number + 1; i++)
+			largerArray[i] = 0;
+		current_array_size = number + 1;
+		copy(coef, coef + current_array_size, largerArray);
+		delete[] coef;
+		coef = largerArray;
+	}
+
+	// MODIFICATION OPERATORS
+	template <class CoefType>
+	polynomial<CoefType>& polynomial<CoefType>::operator =(const polynomial<CoefType>& source)
+	{	
+		delete[] coef;
+		current_array_size = source.current_array_size;
+		coef = new CoefType[current_array_size];
+		for (int i = 0; i < current_array_size; i++)
+			coef[i] = source.coef[i];
+		return *this;
+	}
+
+	template <class CoefType>
+	polynomial<CoefType>&  polynomial<CoefType>::operator -=(const polynomial& p)
+	{
+		if (p.current_array_size > current_array_size)
+		{
+			int i = 0;
+			for (i; i < current_array_size; i++)
+				coef[i] -= p.coef[i];
+			for (i; i < p.current_array_size; i++)
+				assign_coef(-(p.coef[i]), i);
+		}
+
+		else
+			for (int i = 0; i < p.current_array_size; i++)
+				coef[i] -= p.coef[i];
+
+		return *this;
+	}
+
+	template <class CoefType>
+	polynomial<CoefType>&  polynomial<CoefType>::operator +=(const polynomial& p)
+	{
+		if (p.current_array_size > current_array_size)
+		{
+			int i = 0;
+			for (i; i < current_array_size; i++)
+				coef[i] += p.coef[i];
+			for (i; i < p.current_array_size; i++)
+				assign_coef(p.coef[i], i);
+		}
+
+		else
+			for (int i = 0; i < p.current_array_size; i++)
+				coef[i] += p.coef[i];
+
+		return *this;
+	}
+
+
+
+	template <class CoefType>
+	polynomial<CoefType>&  polynomial<CoefType>::operator *=(const polynomial<CoefType>& p)
+	{
+		if (p.current_array_size > current_array_size)
+		{
+			int i = 0;
+			for (i; i < current_array_size; i++)
+				coef[i] *= p.coef[i];
+			for (i; i < p.current_array_size; i++)
+				assign_coef(0, i);
+		}
+
+		else
+			for (int i = 0; i < p.current_array_size; i++)
+				coef[i] *= p.coef[i];
+
+		return *this;
+	}
+
+	template <class CoefType>
+	polynomial<CoefType>&  polynomial<CoefType>::operator *=(CoefType c)
+	{
+		for (int i = 0; i < current_array_size; i++)
+			coef[i] *= c;
+
+			return *this;
+	}
+
+	// CONSTANT MEMBER FUNCTIONS
+	template <class CoefType>
+	CoefType polynomial<CoefType>::coefficient(unsigned int exponent) const
+	{
+		return coef[exponent];
+	}
+
+	template <class CoefType>
+	unsigned int polynomial<CoefType>::degree() const
+	{
+		int i = current_array_size - 1;
+
+		while (i > 0)
+		{
+			if (coef[i] != 0)
+				return i + 1;
+
+			i--;
+		}
+		return -1;
+	}
+
+	template <class CoefType>
+	CoefType polynomial<CoefType>::eval(CoefType x) const
+	{
+		CoefType answer = 0;
+		int i = 0;
+		
+		answer += coef[i];
+		for (i = 1; i < current_array_size; i++)
+			answer += coef[i] * pow(x, i);
+
+		return answer;
+	}
+
+	// CONSTANT OPERATORS
+	template <class CoefType>
+	polynomial<CoefType> polynomial<CoefType>::operator -( )
+	{
+		polynomial<CoefType> result;
+		result = *this;
+		result *= -1;
+		
+		return result;
+	}
+}
