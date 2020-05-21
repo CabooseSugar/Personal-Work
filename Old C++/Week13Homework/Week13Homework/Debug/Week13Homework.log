@@ -1,0 +1,4 @@
+﻿  Wolf_10_1.cpp
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week13homework\week13homework\bintree.template(153): warning C4715: 'solve_tree<char>': not all control paths return a value
+  Week13Homework.vcxproj -> C:\Users\Larry\Desktop\College\2017-2018\Spring\CMPSC122\Week13Homework\Debug\Week13Homework.exe
+  Week13Homework.vcxproj -> C:\Users\Larry\Desktop\College\2017-2018\Spring\CMPSC122\Week13Homework\Debug\Week13Homework.pdb (Full PDB)

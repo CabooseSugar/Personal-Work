@@ -1,0 +1,153 @@
+/**************************************************************************************
+* file name: BinTree.template
+* programmer name: Kyle Wolf
+* date created: 4/27/18
+* date of last revision:
+* details of the revision: 
+* short description: Define the functions of the BinTree class
+***************************************************************************************/
+
+#include <cassert>     // Provides assert
+#include <iomanip>     // Provides setw
+#include <iostream>    // Provides cout
+#include <cstdlib>     // Provides NULL, size_t
+
+template <class Item>
+BinaryTreeNode<Item>* create_node(
+    const Item& entry,
+    BinaryTreeNode<Item>* l_ptr,
+    BinaryTreeNode<Item>* r_ptr)
+{
+    BinaryTreeNode<Item>* result_ptr;
+
+    result_ptr = new BinaryTreeNode<Item>;
+    result_ptr->data  = entry;
+    result_ptr->left  = l_ptr;
+    result_ptr->right = r_ptr;
+
+    return result_ptr;
+}
+
+template <class Item>
+BinaryTreeNode<Item>* tree_copy(const BinaryTreeNode<Item>* root_ptr)
+// Library facilities used: cstdlib
+{
+    BinaryTreeNode<Item> *l_ptr;
+    BinaryTreeNode<Item> *r_ptr;
+
+    if (root_ptr == NULL)
+        return NULL;
+    else
+    {
+        l_ptr = tree_copy(root_ptr->left);
+        r_ptr = tree_copy(root_ptr->right);
+        return create_node(root_ptr->data, l_ptr, r_ptr);
+    }
+}
+
+template <class Item>
+void tree_clear(BinaryTreeNode<Item>*& root_ptr)
+{
+    if (root_ptr != NULL)
+    {
+        tree_clear(root_ptr->left);
+        tree_clear(root_ptr->right);
+        delete root_ptr;
+        root_ptr = NULL;
+    }
+}
+
+template <class Item>
+bool is_leaf(const BinaryTreeNode<Item>& node)
+{
+    return (node.left == NULL) && (node.right == NULL);
+}
+
+template <class Item>
+void inorder(BinaryTreeNode<Item>* node_ptr)
+{
+    if (node_ptr != NULL)
+    {
+        inorder(node_ptr->left);
+        cout << (node_ptr->data) << ' ';
+        inorder(node_ptr->right);
+    }
+}
+
+template <class Item>
+void postorder(BinaryTreeNode<Item>* node_ptr)
+{
+    if (node_ptr != NULL)
+    {
+        postorder(node_ptr->left);
+        postorder(node_ptr->right);
+        cout << (node_ptr->data) << ' ';
+    }
+}
+
+template <class Item>
+void preorder(BinaryTreeNode<Item>* node_ptr)
+{
+    if (node_ptr != NULL)
+    {
+        cout << node_ptr->data << ' ';
+        preorder(node_ptr->left);
+        preorder(node_ptr->right);
+    }
+}
+
+template <class Item, class SizeType>
+void print(BinaryTreeNode<Item>* node_ptr, SizeType depth)
+// Library facilities used: iomanip, iostream, cstdlib
+{
+    if (node_ptr != NULL)
+    {
+        print(node_ptr->right, depth+1);
+        cout << setw(4*depth) << ""; // Indent 4*depth spaces
+        cout << node_ptr->data << endl;
+        print(node_ptr->left, depth+1);
+    }
+}
+
+template <class Item>
+size_t tree_size(const BinaryTreeNode<Item>* node_ptr)
+// Library facilities used: stdlib.h
+{
+    if (node_ptr == NULL)
+        return 0;
+    else
+        return 1 + tree_size(node_ptr->left) + tree_size(node_ptr->right);
+}
+
+template <class Item>
+int sum_all(BinaryTreeNode<Item>* root_ptr)
+{
+	static int sum = 0;
+	if (root_ptr != NULL)
+	{
+		sum += root_ptr->data;
+		sum_all(root_ptr->left);
+		sum_all(root_ptr->right);
+	}
+	return sum;
+}
+
+template <class Item>
+int solve_tree(BinaryTreeNode<Item>* ptr)
+{
+	int A, B;
+
+	if (ptr != NULL)
+	{
+		if (ptr->data >= 48 && ptr->data <= 57)
+			return (ptr->data - '0');
+
+		A = solve_tree(ptr->left);
+		B = solve_tree(ptr->right);
+
+		if (ptr->data == '+')
+			return (A + B);
+		if (ptr->data == '*')
+			return (A * B);
+	}
+}
