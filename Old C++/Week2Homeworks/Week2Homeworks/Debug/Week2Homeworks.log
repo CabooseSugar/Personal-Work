@@ -1,0 +1,10 @@
+﻿  Wolf_2_9.cpp
+  Quad.cpp
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week2homeworks\week2homeworks\quad.cpp(117): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week2homeworks\week2homeworks\quad.cpp(118): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week2homeworks\week2homeworks\quad.cpp(119): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week2homeworks\week2homeworks\quad.cpp(98): warning C4715: 'wolf_quadraticExpression::Quad::largeRoot': not all control paths return a value
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week2homeworks\week2homeworks\quad.cpp(86): warning C4715: 'wolf_quadraticExpression::Quad::smallRoot': not all control paths return a value
+  Week2Homeworks.vcxproj -> C:\Users\Larry\Desktop\College\2017-2018\Spring\CMPSC122\Week2Homeworks\Debug\Week2Homeworks.exe
+  Week2Homeworks.vcxproj -> C:\Users\Larry\Desktop\College\2017-2018\Spring\CMPSC122\Week2Homeworks\Debug\Week2Homeworks.pdb (Full PDB)

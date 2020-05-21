@@ -1,0 +1,8 @@
+﻿  Wolf_2_8.cpp
+  Quad.cpp
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week1homeworks\week1homeworks\quad.cpp(59): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week1homeworks\week1homeworks\quad.cpp(60): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\larry\desktop\college\2017-2018\spring\cmpsc122\week1homeworks\week1homeworks\quad.cpp(61): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  Week1Homeworks.vcxproj -> C:\Users\Larry\Desktop\College\2017-2018\Spring\CMPSC122\Week1Homeworks\Debug\Week1Homeworks.exe
+  Week1Homeworks.vcxproj -> C:\Users\Larry\Desktop\College\2017-2018\Spring\CMPSC122\Week1Homeworks\Debug\Week1Homeworks.pdb (Full PDB)
