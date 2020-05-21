@@ -1,0 +1,21 @@
+10
+Alien
+5
+Drive
+5
+Bladerunner
+5
+Drive
+3
+The Thing
+3
+Lord of the Rings: Fellowship of the Ring
+4
+Drive
+5
+Alien
+2
+Alien
+3
+The Thing
+4
