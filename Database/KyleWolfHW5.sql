@@ -1,0 +1,94 @@
+------problem 1-----------------------
+UPDATE student
+SET tot_cred = 0;
+
+UPDATE student
+SET tot_cred = (SELECT SUM(credits) 
+		FROM takes, course
+		WHERE takes.course_id=course.course_id AND
+		student.ID = takes.ID AND
+		takes.grade IS NOT NULL);
+
+
+------problem 2-----------------------
+INSERT INTO section
+SELECT course_id, sec_id, semester, 2021 year, building, room_number, time_slot_id FROM section
+WHERE semester = 'Spring' AND year = 2020;
+
+
+------problem 3-----------------------
+UPDATE teaches 
+SET ID = (SELECT ID FROM instructor 
+        WHERE name = 'Brandt')
+WHERE semester = 'Spring' AND year = 2021 AND course_id IN (SELECT course_id FROM teaches NATURAL JOIN course WHERE dept_name = 'Computer Science');
+
+------problem 4-----------------------
+INSERT INTO takes
+SELECT DISTINCT ID, 'CS-319' course_id, 1 sec_id, 'Spring' semester, 2021 year, null grade FROM (
+SELECT DISTINCT ID FROM takes WHERE ID IN (SELECT ID FROM takes NATURAL JOIN student WHERE dept_name = 'Computer Science')
+MINUS
+SELECT DISTINCT ID FROM takes WHERE course_id  = 'CS-319');
+
+------problem 5-----------------------
+select distinct course_id, sec_id, semester, year from section
+minus (
+select distinct course_id, sec_id, semester, year from takes
+union
+select distinct course_id, sec_id, semester, year from teaches);
+
+
+------problem 6-----------------------
+
+CREATE TABLE temp(
+	course_id VARCHAR(10),
+	sec_id VARVHAR(8),
+	semester VARCHAR(6),
+	year NUMERIC(4,0),
+	building VARCHAR(15),
+	room_number VARCHAR(8),
+	time_slot_id VARCHAR(4)
+);
+
+
+INSERT INTO temp
+SELECT * FROM section
+WHERE semester = 'Spring' AND year IN (2019, 2020, 2021);
+
+
+INSERT INTO section
+SELECT course_id, CASE
+		WHEN year = 2019 THEN CAST(sec_id AS INTEGER) + 1000
+		WHEN year = 2020 THEN CAST(sec_id AS INTEGER) + 2000
+		WHEN year = 2021 THEN CAST(sec_id AS INTEGER) + 3000
+		ELSE CAST(sec_id AS INTEGER)
+	END 
+sec_id, semester, year, building, room_number, time_slot_id FROM section
+WHERE semester = 'Spring';
+
+
+UPDATE takes
+SET sec_id = CASE
+		WHEN year = 2019 THEN CAST(sec_id AS INTEGER) + 1000
+		WHEN year = 2020 THEN CAST(sec_id AS INTEGER) + 2000
+		WHEN year = 2021 THEN CAST(sec_id AS INTEGER) + 3000
+		ELSE CAST(sec_id AS INTEGER)
+	END
+WHERE semester = 'Spring';
+
+
+UPDATE teaches
+SET sec_id = CASE
+		WHEN year = 2019 THEN CAST(sec_id AS INTEGER) + 1000
+		WHEN year = 2020 THEN CAST(sec_id AS INTEGER) + 2000
+		WHEN year = 2021 THEN CAST(sec_id AS INTEGER) + 3000
+		ELSE CAST(sec_id AS INTEGER)
+	END
+WHERE semester = 'Spring';
+
+
+DELETE FROM section
+WHERE (course_id, sec_id, semester, year, building, room_number, time_slot_id) IN (SELECT * FROM temp);
+
+
+DROP TABLE temp;
+
